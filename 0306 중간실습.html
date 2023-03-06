@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = "10"
+        let num2 = "20"
+
+            if (num < num2) {
+			document.write("<p>20출력</p>")
+            }
+            else{ 
+                document.write("<p>출력되지 않음</p>")
+            }
+            
+            
+        let book = "5"
+            if (book < 5) {
+                document.write(`<p>책을 빌릴 수 있습니다 ${5-book}권</p>`)
+                document.write(`<p> ${5-book}권 빌릴 수 있듬</p>`)
+            }
+            else {
+                document.write("<p>대출받을 수 있는 책을 다 빌렸습니다</p>")
+            }
+
+            
+        let score = "69"
+            if (score <60) {
+                document.write("<p>재수강</p>")
+            }
+            else if (score >= 70) {
+                document.write("<p>합격</p>")
+            }
+            else if (score >= 60) {
+                document.write("<p>보충수업</p>")
+            }
+
+
+        let month = "5"
+            switch (month) {
+            case "1": case "3": case "5": case "7": case "8": case "10": case "12":
+                document.write("<p>31일</p>");
+                break;
+            case "4": case "6": case "9": case "11":
+                document.write("<p>30일</p>");
+                break;
+            case "2":
+                document.write("<p>28일</p>");
+                break;
+            default : 
+                document.write("<p>잘못된 달</p>")
+        }
+
+ /* 스위치문 대신에 if-else if 를 사용했을 경우 */
+        // 1월~12월값을 입력했을때 그 일수를 출력
+        let month2 = 11;
+
+        // 출력해야할 결과가 동일할때는 
+        // 논리연산자 (||, &&)를 이용해서 조건식을 계산할수 있다
+        // || : 두개의 조건식 중에서 하나가 참일때 실행
+        // && : 두개의 조건식이 전부 참일때 실행
+        if ( month2 == 1 || month2 == 3 || month2 == 5 ||
+            month2 == 7 || month2 == 8 ||
+            month2 == 10 || month2 == 12) {
+            document.write("<p>31일</p>");
+        } else if (month2 == 2) {
+            document.write("<p>28일</p>");
+        } else if (month2 == 4 || month2 == 6 || 
+                    month2 == 9 ||month2 == 11 ) {
+            document.write("<p>30일</p>");
+        }
+
+
+        Number("string")
+        
+
+
+
+
+    </script>
+</body>
+</html>

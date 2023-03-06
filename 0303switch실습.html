@@ -7,27 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 스크립트 -->
+    <!-- 자바스크립트 -->
     <script>
-        let score = A;
-        switch (score){
-            case "A" : 
-                document.write("<p>참잘했어요<p>");
+        // 1. 변수 : score
+        // 2. 조건식/ 참일때 실행
+        //    score == 'A' / "참잘했습니다"
+        //    score == 'B' / "잘했습니다"
+        //    score == 'C' / "아쉽습니다"
+        //    score == 'D' / "분발하세요"
+        //    (그외의 값)default / "잘못된 점수"
+        let score = "B";
+        switch (score) {
+            case "A":
+                document.write("<p>참잘했습니다</p>");
                 break;
-            case "B" : 
-                document.write("<p>잘했습니다<p>");
+            case "B":
+                document.write("<p>잘했습니다</p>");
                 break;
-            case "C" : 
-                document.write("<p>아쉽습니다<p>");
+            case "C":
+                document.write("<p>아쉽습니다</p>");
                 break;
-            case "D" : 
-                document.write("<p>분발하세요<p>");
+            case "D":
+                document.write("<p>분발하세요</p>");
                 break;
-            default :
-                document.write("<p>잘못된 점수입니다<p>")
+            default : 
+                document.write("<p>잘못된 점수</p>")
         }
-
-
 
     </script>
 </body>

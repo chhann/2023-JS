@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 단항 : ++, -- 하나의 변수에서 쓸수 있는 연산자
+        // 삼항 : 세개의 갑을 이용해서 쓸수 있는 연산자
+
+        //if문은 조건식에 따라 {}안에 내용이 실행
+        //삼항연산자 : 조건식과 참일때와 거짓일때의 값을 이용한 계산식
+        true ? "참입니다" : "거짓"; // 3+1; 동일
+        // 변수에 값을 담아서 사용하거나 console.log에 담아서 
+        let result = false ? "참입니다" : "거짓" ;
+
+        let money = 1000
+        console.log(money >= 1500 ? "버스를 탈 수 있다"
+                                    :(1500-money)+"원 부족, 버스를 탈 수 없다");
+
+        // 삼항 연산자 연습
+        // 나이가 19세 이상이면 성인입니다.
+        // 미만이면 학생입니다 문자열을 변수에 담은 후 
+        // document.write로 출력하세요
+
+        let age = 15;
+            document.write(age >= 19 ? "성인입니다" : "학생이네요 " +(19-age)+ "살 더 먹고오세요")
+        //
+        let age1 = 40;
+        let result1 = (age>=19) ? "성인입니다" : "학생입니다"
+            document.write(`<p>${result1}<p>`);
+
+            // 삼항 연산자 활용
+            // 변수 초기화
+        let name = prompt("이름을 적어주세요");
+            name = name ? name : "이름이 없습니다";
+            document.write(`<p>${name}<p>`)
+            
+        
+        // 삼항연산자 실습
+        // 둘중에 큰 값을 저장 (같은 값x)
+
+        let a = prompt("a값을 적어주세요") ;
+        let b = prompt("b값을 적어주세요") ;
+        let max = (a>b) ? `${a}이므로 값이 더큼` : `${b}이므로 b값이 더큼`
+            document.write(`<p>${max}<p>`)
+
+
+
+
+
+
+    </script>
+</body>
+</html>
