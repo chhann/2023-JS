@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+    
+
+    // document.write (`${}`); 함수
+    // 바꾸고자하는 내용 =변수 (매개변수)
+    // 매개변수의 값은 선언할떄 정해지지않고 호출할때 정해진다
+    // 
+    function print (string) {
+        document.write(`<p>${string}<p>`);
+    }
+    // return 값이 없으면 undefined로 값을 전달
+
+    //미세먼지 판별 함수
+    function dustCheck(dust) {
+        if(dust <= 30) {
+            return("좋음");
+        }
+        else if (dust <=80) {
+            return("보통");
+        }
+        else if (dust <=150) {
+            return ("나쁨");
+        }
+        else{
+            return("매우나쁨");
+        }
+    }
+
+    // 구구단 함수
+    function numCheck (num){
+        for(let i=1; i<=9 ; i++) {
+            document.write(`<p>${num*i}=${num}X${i}<p>`)
+        }
+    }
+
+    
+    </script>
+
+</head>
+<body>
+
+    <script>
+        /* 함수를 만들기전에 확인하는 방법 */ 
+        // 매개변수 > 변수 = 임의의 값
+        // 실행할 내용 > 변수의 값을 넣어서 실행
+        let string = "방가버여"
+        document.write(`<p>${string}<p>`);
+        ////////////////////////////////////////
+        // 위의 내용으로 만든 함수 호출
+        print ("샤랍");
+        // 호출한 공간에서 return값 가져옴
+        // 이떄 변수에 담아주지않으면 값은 사라진다
+        // 3+4와 같은 값을 변수에 담지 않으면 사라짐
+
+        // 미세먼지 판별 조건문 > 함수로 만들기
+        // 1. 변수 : dust
+        // 2. 조건식 / 참일떄 return 내용 :
+        // dust <=30 / 좋음
+        // dust <=80 / 보통
+        // dust <=150 / 나쁨
+        // 그외 (else) / 매우나쁨
+
+        let dust = 130; // 매개변수
+        if(dust <= 30) {
+            print("좋음");
+        }
+        else if (dust <=80) {
+            print("보통");
+        }
+        else if (dust <=150) {
+            print ("나쁨");
+        }
+        else{
+            print("매우나쁨");
+        }
+        ////////////////////////////////////////
+        //위의 내용으로 만든 함수 호출
+        // 함수안에서 print 또는 document.write로 호출하지 않고
+        // return 으로 자료형을 주는 것은 값을 받아와서
+        // 수정 또는 계한하기 위함
+        print("오늘미세먼지는 "+dustCheck(180)+" 입니다");
+
+        // 구구단 나을 입력했을떄 그 단을 출력하는 내용을 작성하기
+        // 함수로 만드세요 *함수에서도 결과 바로 출력
+        
+        let num = 4 // 매개변수
+        for(let i=1; i<10 ; i++) {
+            document.write(`<p>${num*i}=${num}X${i}<p>`)
+        }
+        ////////////////////////////////////////
+        // 위의 내용으로 만든 함수 호출
+        // print() , documet.write() 에넣어서 출력하지 않은 이유
+        // gugudan이라는 함수에서 return 을 사용하지 않았기때문
+        
+        // 괄호를 붙여서 함수를 호출해야 함수안의 내용 실행후 
+        // return값 전달
+        numCheck(2);
+
+        // 괄호를 붙여주지 않으면 그안의 함수 내용을 전달
+        document.write(numCheck)
+        
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

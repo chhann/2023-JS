@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="greeting"></h1>
+    <h1 id="gd"></h1>
+
+
+    <script>
+        // 조건문
+        let num3 = parseInt(prompt("현재 나이를 작성하세요"));
+        if(isNaN(num3)){
+            document.getElementById('gd').innerHTML
+            ("<p>나이가 아닙니다<p>");
+                
+        } else {
+            document.getElementById('gd').innerHTML
+            =`태어난 년도는 ${ parseInt(2024-num3)}입니다`;
+        }
+
+
+
+
+
+        // 반복문
+        let num = parseInt(prompt ("현재 나이를 입력하세요"));
+
+        while (isNaN(num)){
+            document.getElementById('greeting').innerHTML
+            =alert("나이가 아니다 다시 적어라")
+            num = parseInt(prompt ("현재 나이를 입력하세요"));
+            }
+
+            document.getElementById('greeting').innerHTML
+            =`태어난 년도는 ${ parseInt(2024-num)}입니다`;
+        
+        
+
+
+        
+
+
+    </script>
+</body>
+</html>
