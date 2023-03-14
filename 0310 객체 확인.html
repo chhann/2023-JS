@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 객체 : 속성값(변수)과 메소드(함수)를 가지고 있는 자료형 
+    (변수에 저장해서 사용)*/    
+    // document 의 자료형 : 객체 (object)
+    document.write(typeof(document));
+    
+    // 객체 생성 후 변수에 할당 (자료형이기때문에)
+    let puppy = {
+
+        //속성
+        name : "초코",
+        //메소드
+        eat : function() {
+            document.write(`<p>${this.name} 밥을 먹습니다<p>`)
+        },
+    };
+
+    document.write(`<p>${puppy.name}<p>`);
+    document.write(`<p>${puppy["name"]}<p>`);
+    puppy.eat()
+
+    //실습 1
+    let person = {
+
+        name : "길동이",
+        address : "부산",
+
+        intro : function() {    
+            return `${this.name}입니다. ${this.address}에 거주중입니다.`
+        }       
+    }
+
+    // 실습 2
+    let myCookie = {
+        
+        shape : "원",
+        flavor : "초코",
+
+        intro : function () {
+            // this는 자기자신의 객체를 가져온다
+            return `${this.shape}모양의 ${this.flavor} 맛입니다`;
+        },
+        count : function (number) {
+            return `${number}개 있슴다`;
+        }
+    }
+    myCookie.intro();
+
+
+    /* 생성자 함수 : 값을 받아와서 객체를 만드는 함수 */
+    // 생성자 함수는 구분을 위해 첫 글자를 대문자로
+    function Dog (color, name, age) {
+        //객체의 속성할당
+        this.name = name; 
+        this.age = age;
+        this.color = color;
+        // 메소드 작성
+        this.eat = function (){
+            return `${this.name}는 밥을 먹습니다`;
+        }
+
+
+    }
+    let dog1 = new Dog("흰색","백구",1);
+    // 없는 속성에 접근해도 오류가 발생하지않고 undefined를 출력
+    console.log(dog1.family);
+    // 없는 속성에 값을 넣어주면 그 값이 할당되어 사용가능
+    dog1.family = "진돗개"
+    console.log(dog1.family);
+
+
+    // 생성자 함수 이용한 객체 생성 실습
+    function Student (name, score) {
+        this.name = name;
+        this.score = score;
+
+        this.study = function () {
+            this.score += 10;
+        }
+        this.showScore= function() {
+            return this.score;
+        }
+    }
+
+    let myStudent = new Student ("홍길동" , 70);
+    let yourStudent = new Student ("이춘향" , 80);
+
+
+    // 실습2
+
+    function BusCard (money) {
+        this.money = money;
+
+        this.charge = function(cash) {
+            this.money += cash;
+        },
+        this.takeBus = function() {
+            if(this.money >= 1500){
+                this.money -= 1500;
+            }
+            else {
+                console.log("잔액이 부족합니다");
+            }
+        },   
+        this.showMoney =function(){
+            return this.money;
+        }
+    }
+
+    let myBusCard = new BusCard (1500);
+    let yourBusCard = new BusCard (1000);
+
+
+    // 실습3
+
+    function Messege (name, content, time){
+        this.name = name;
+        this.content = content;
+        this.time = time;
+
+
+        this.modifvMessege = function(messege){
+            this.content = messege;
+        },
+        this.showMessege = function() {
+            return `${this.name}님께서 ${this.content}를 ${this.time}에 보냈습니다`
+        }
+    }
+
+    let myMessege = new Messege ("리춘향", "반갑습니다", "0224");
+    let yourMessege = new Messege ("성춘향", "안녕하세요", "0224");
+
+
+    //생성자 함수로 만든 객체는 객체의 메소드에 접근 가능
+    let num = Number(123);
+     // 어떤 메소드인지는 모르지만 메소드에 접근해서 사용 가능나무
+    num.toExponential();
+    
+    // 가장 많이 사욯안 documnet의 메소드
+    document.write("<p>객체에 들어가 있는 함수를 메소드다고 한다<p>")
+
+    // 객체 - 자료형중의 하나, 속성값, 메소드를 가진다.
+    // this - 자기 자신을 호출하는 키워드
+
+    // delete 연습 : 객체의 속성/메소드 삭제
+    delete myMessege.name;
+    // name 속성이 삭제되어 undefined로 출력
+    console.log(myMessege.showMessege());
+
+    // 객체 안의 속성/메소드 반복
+    // for ... in
+    for(let i in puppy) {
+        document.write(
+        "<p>"+i+":"+puppy[i]+"</p>"
+            );
+        }
+
+        // for in 실습
+        for(let i in yourMessege) {
+            document.write(`<p>${i}</p>`);
+        }
+
+        for(let i in myBusCard) {
+            document.write(`<p>${myBusCard[i]}</p>`)
+        }
+
+    </script>
+</body>
+</html>
