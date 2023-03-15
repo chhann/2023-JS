@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/0315 stye.css">
+</head>
+<body>
+    <h1 id="h1">수정하기 전 제목입니다</h1>
+    <div>
+        <ul id="ul">
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ul>
+        <ol id="ol">
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ol>
+    </div>
+
+    <div class="main">
+        <p><span>빈 공간</span> 입니다</p>
+    </div>
+
+    <div class="footer">
+        <p>푸터영역입니다</p>
+    </div>
+
+
+    <script>
+        let title = document.querySelector("#h1");
+        title.innerHTML ="DOM 이용한 수정";
+        title.style.color= "blue";
+        title.style.backgroundColor="lightgray";
+
+
+
+        let list1 = document.querySelector("ul");
+        ul.firstElementChild.remove();
+
+        let li = document.createElement("li");
+        li.innerHTML = "새로 추가한 노드 요소입니다.";
+        list1.appendChild(li);
+        
+
+
+        let list2 = document.querySelectorAll("#ol>li")
+        list2[1].innerHTML = "내용을 바꿉니다"
+        // ol.children[1].remove();
+        // ol.
+        ol.removeChild(ol.firstElementChild);
+        ol.removeChild(ol.lastElementChild);
+
+
+
+        let span = document.querySelector(".main span");
+        span.style.color = "red";
+
+        // span 태그를 통해 부모로 접근해서 p태그 복제
+        let p = span.parentNode;
+        // 동일한 내용을 수정없이 복제 할 경우 
+        // 변수에 넣지 않고 작성가능
+        let main = document.querySelector(".main");
+        //main.append(p.cloneNode(true))
+        //main.append(p.cloneNode(true))
+
+        // 위이 내용을 for문으로작성
+        for (let i=0; i<5; i++) {
+            main.append(p.cloneNode(true));
+        }
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
