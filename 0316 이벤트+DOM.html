@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="light">
+
+    <h1 id="title" class="title">HTML 태그와 DOM객체</h1>
+    <img class="image" src="" alt="">
+
+    <form id="form">
+
+        <a href="" target="_blank">언플래쉬에서 가져온 이미지입니다</a>
+        <br>
+
+        <p>이름을 입력해 주세요</p>
+        <input id="input" type="text" required>
+        <br>
+
+        <input type="radio" name="gender" id="radio1" value="female"><span>여성</span>
+        <input type="radio" name="gender" id="radio1" value="male"><span>남성</span>
+        <br>
+
+        <p>좋아하는 과일을 중복해서 고르세요</p>
+        <input id="checkbox1" type="checkbox" name="fruit" value="apple" checked> <span>사과</span>
+        <input id="checkbox1" type="checkbox" name="fruit" value="orange" checked> <span>오렌지</span>
+        <input id="checkbox1" type="checkbox" name="fruit" value="strawberry" checked> <span>딸기</span>
+        <input id="checkbox1" type="checkbox" name="fruit" value="peach" checked> <span>복숭아</span>
+        <br>
+
+        <input id="date" type="date" min="2023-03-16">
+        <br>
+
+        <input id="submit" type="submit" value="제출">
+
+    </form>
+<hr>
+<hr>
+<hr>
+    <!-- ////////////////////// -->
+    <button id="btn2" onclick="printTest()">버튼 클릭하면 버튼안의 글자가 바뀜</button>
+
+    <p id="p2" onmouseleave="chageColor()">마우스를 빠져나가면 글자가 파란색으로 바뀜</p>
+
+    <p id="p3" onmouseenter="changeColor1()" onmouseleave="changeColor2()">마우스를 올리면 글자가 빨간색으로, 마우스가 빠져나가면 파란색으로 바뀜</p>
+
+
+    <script>
+        let input = document.querySelector("#input")
+        input.required
+        input.value 
+
+        let title = document.querySelector("#title")
+        title.innerHTML = "H.I"
+
+        let radio = document.querySelector("#radio1")
+        radio.value
+        radio.cheched 
+
+        let checkbox = document.querySelector("#checkbox1")
+        checkbox.value 
+
+        let date = document.querySelector("#date")
+        date.value="2023-03-16"
+
+        let image = document.querySelector(".image")
+        image.src = "./img/dog-.png"
+
+        let body = document.querySelector (".light")
+        body.classList
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        function printTest() {
+            let button = document.querySelector("#btn2")
+            button.innerHTML = "ㅎㅇㅎㅇ"
+        }
+
+        function chageColor() {
+            let p2 = document.getElementById("p2")
+            p2.style.color="blue"
+        }
+
+        function changeColor1() {
+            let p3 = document.getElementById("p3")
+            p3.style.color="red"
+        }
+
+        function changeColor2() {
+            let p4 = document.getElementById("p3")
+            p4.style.color="blue"
+        }
+        
+        
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
